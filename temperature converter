@@ -11,37 +11,60 @@ int main()
 	printf("Enter the scale name`s first latter or enter '0' to see all results:");
 	scanf("%s", &l);
 	 if (l == 'C') {
+	    if (v<-273) { 
+		printf("The temperatur for C must be high then -273");
+		return 0; 
+		}
 	   printf("\n\n==>%.2f ", v);
 	   printf("%c\n", l);
 	    printf("%.2f K\n",v+273.15);
 	    printf("%.2f F\n",v*1.8+32);
 	}
 	 if (l == 'K') {
+	 	if (v<0) { 
+		printf("The temperatur for K must be high then 0");
+		return 0; 
+	    }
 	   printf("\n\n==>%.2f ", v);
 	   printf("%c\n", l);
 	    printf("%.2f C\n",v-273.15);
 	    printf("%.2f F\n",(v-273.15)*1.8+32);
     }
   	 if (l == 'F') {
+  	 	if (v<-459) { 
+		printf("The temperatur for F must be high then -459,67");
+		return 0;
+	    } 
 	   printf("\n\n==>%.2f ", v);
 	   printf("%c\n", l);
 	    printf("%.2f C\n",(v-32)/1.8);
 	    printf("%.2f K\n",(v-32)/1.8+273.15);
     }
     if (l == '0') {
+    	if (v>=-273) { 
     	printf("\n\n==>%.2f ", v);
 	    printf(" C\n");
 	     printf("%.2f K\n",v+273.15);
 	     printf("%.2f F\n",v*1.8+32);
+		 }
+		 else printf("Contradicts physics for Celsius!");
 	  
+	   if (v>=0) { 
 	   printf("\n\n==>%.2f ", v);  
        printf(" K\n");
 	    printf("%.2f C\n",v-273.15);
-	    printf("%.2f F\n",(v-273.15)*1.8+32);
+	    printf("%.2f F\n",(v-273.15)*1.8+32);                 
+		}
+		 else printf("Contradicts physics for Kelvin!");
 		
+	   if (v>=-459) { 
 	   printf("\n\n==>%.2f ", v);
 	   printf(" F\n");
 	    printf("%.2f C\n",(v-32)/1.8);
-	    printf("%.2f K\n",(v-32)/1.8+273.15);	
+	    printf("%.2f K\n",(v-32)/1.8+273.15);
+	    }
+	     else printf("Contradicts physics for Fahrenheit!");
+	   if (v<-459) printf("Contradicts physics!");
 	}
+	return 0;
 }
